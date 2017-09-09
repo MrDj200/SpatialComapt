@@ -1,0 +1,25 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+*.nb-gradle-properties
+build
+.gradle
+
+# other
+*.pdn
+eclipse
+run
+/.nb-gradle/

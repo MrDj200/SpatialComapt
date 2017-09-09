@@ -1,0 +1,16 @@
+[
+{
+  "modid": "spatialservermod",
+  "name": "Spatial Server Mod",
+  "description": "This mod allows most modded TE's to work in the Spatial Storage from AE2",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Dj"],
+  "credits": "Bullshit",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
