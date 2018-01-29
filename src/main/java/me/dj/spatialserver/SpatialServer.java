@@ -18,13 +18,13 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
  *
  * @author Dj
  */
-@Mod(modid = SpatialServer.MODID, name = SpatialServer.NAME, version = SpatialServer.VERSION, acceptableRemoteVersions = "*") 
+@Mod(modid = SpatialServer.MODID, name = SpatialServer.NAME, version = SpatialServer.VERSION, acceptableRemoteVersions = "*", acceptedMinecraftVersions = "*") 
 public class SpatialServer 
 {
     public static ServerProxy proxy = new ServerProxy();
     public static final String MODID = "spatialservermod";
     public static final String NAME = "Spatial Server Mod";
-    public static final String VERSION = "@version@";    
+    public static final String VERSION = "1.3";    
     
     @EventHandler
     void preInit( FMLPreInitializationEvent event )
@@ -36,7 +36,7 @@ public class SpatialServer
     void init( FMLInitializationEvent event )
     {
         proxy.init(event);
-        testMethod();
+        registerTiles();
     }
     
     @EventHandler
@@ -46,20 +46,11 @@ public class SpatialServer
     }
     
     
-    public void testMethod()
+    public void registerTiles()
     {
         Field field = ReflectionHelper.findField(TileEntity.class, "REGISTRY", "field_190562_f");
         try
         {
-            //Field field;
-            /*try {
-                Class cls = Class.forName("avh.f");
-                field = cls.getDeclaredField("field_190562_f");
-            }
-            catch(ClassNotFoundException ex)
-            {
-                field = TileEntity.class.getDeclaredField("REGISTRY");
-            }*/
             field.setAccessible(true);
             RegistryNamespaced<ResourceLocation, Class<? extends TileEntity>> reg = (RegistryNamespaced) field.get(null);
             for(ResourceLocation location : reg.getKeys())

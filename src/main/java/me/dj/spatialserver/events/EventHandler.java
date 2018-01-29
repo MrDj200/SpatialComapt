@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
  */
 public class EventHandler 
 {
+    /*
     @SubscribeEvent
     public void onPlayerJoin(EntityJoinWorldEvent event)
     {
@@ -23,17 +24,13 @@ public class EventHandler
             player.sendMessage(new TextComponentString("Hello " + playerName + "! SpatialServerMod is loaded!"));
         }
     }
+    */    
     
+    /*
     @SubscribeEvent
     public void onPlayerDimChange(PlayerEvent.PlayerChangedDimensionEvent event)
     {
         Entity player = event.player;
-        /*WorldServer world = DimensionManager.getWorld(event.toDim);
-        BlockPos pos = player.getPosition();
-        Chunk curChunk = world.getChunkFromBlockCoords(pos);
-        BiomeProvider biomeProvider = world.getBiomeProvider();
-        Biome biome = curChunk.getBiome(player.getPosition(), world.getBiomeProvider());
-        String biomeName = biome.getBiomeName();*/
         int myDim = event.toDim;
         
         player.sendMessage(new TextComponentString("You entered the Dim #" + myDim));
@@ -42,4 +39,5 @@ public class EventHandler
             player.sendMessage(new TextComponentString("OH NOES! You entered an Instant Dungeon :O"));
         }        
     }
+    */
 }
