@@ -62,7 +62,7 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-    compile ("appeng:appliedenergistics2:rv5-alpha-4")
+    compile ("appeng:appliedenergistics2:rv6-stable-7") // Changed from rv5 to rv7 cause they deleted rv5
       
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
@@ -79,6 +79,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
 
 }
 
