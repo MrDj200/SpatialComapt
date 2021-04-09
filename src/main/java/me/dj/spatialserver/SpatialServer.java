@@ -24,7 +24,7 @@ public class SpatialServer
     public static ServerProxy proxy = new ServerProxy();
     public static final String MODID = "spatialservermod";
     public static final String NAME = "Spatial Server Mod";
-    public static final String VERSION = "1.3";    
+    public static final String VERSION = "1.3.1";
     
     @EventHandler
     void preInit( FMLPreInitializationEvent event )
@@ -56,7 +56,7 @@ public class SpatialServer
             for(ResourceLocation location : reg.getKeys())
             {
                 Class<? extends TileEntity> entity = reg.getObject(location);
-                if ( entity.getName().contains("funkylocomotion") )
+                if ( entity.getName().contains("funkylocomotion") || (entity.getName().toLowerCase().contains("sealed") && entity.getName().toLowerCase().contains("galacticraft")) )
                     continue;
                 FMLInterModComms.sendMessage( "appliedenergistics2", "whitelist-spatial", entity.getName());
                 LogHelper.info("Registered TE: " + entity.getName());
